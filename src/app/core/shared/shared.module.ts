@@ -1,14 +1,20 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+
 
 @NgModule({
     imports:[
         HttpClientModule,
         RouterModule,
-        MatTabsModule
+        CommonModule,
+        MatTabsModule,
+        MatCardModule
     ],
     declarations:[
         NotFoundComponent
@@ -16,8 +22,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     exports:[
         HttpClientModule,
         NotFoundComponent,
+        CommonModule,
         RouterModule,
-        MatTabsModule
+        MatTabsModule,
+        MatCardModule 
     ],
     
     providers:[]

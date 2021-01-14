@@ -1,3 +1,4 @@
+import { PublicService } from './../../public.service';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -8,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
+    
+    characters:any;
+    continents:any;
+    
+    constructor(private publicServices: PublicService){}
 
-    constructor(){}
+    ngOnInit(){
+        this.getCharacters();
+        this.getContinents();
+    }
 
-    ngOnInit(){}
+    getCharacters(){
+        this.publicServices.getCharacters().subscribe(
+            response => this.characters = response,
+            error => console.log(error)
+        )
+    }
+
+    getContinents(){
+        this.publicServices.getContinents().subscribe(
+            response => this.continents = response,
+            error => console.log(error)
+        )
+    }
 
 }

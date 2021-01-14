@@ -4,6 +4,7 @@ import { PublicComponent } from './public.component';
 import { SharedModule } from './../core/shared/shared.module';
 import { NgModule } from '@angular/core';
 import { PublicRoutingModule } from './public-routing.module';
+import { PublicService } from './public.service';
 
 @NgModule({
     imports:[
@@ -16,7 +17,9 @@ import { PublicRoutingModule } from './public-routing.module';
         LoginComponent
     ],
     exports:[],
-    providers:[]
+    providers:[
+        PublicService,
+    ]
 })
 
 export class PublicModule {
